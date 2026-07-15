@@ -13,3 +13,17 @@ This work implements a framework for determining the difference in proximity to 
 3. BAKS (Bayesian Adaptive Kernel Smoothing): This folder contains code that smooths binned spike trains into a continuous firing rate signal by supposing a time-varying bandwidth, which allows for the rate function to adapt to changing spiking behaviors (tonic firing, bursting, long periods of quiescence). Using the framework in "Estimation of neuronal firing rate using Bayesian Adaptive Kernel Smoother (BAKS)" by Ahmadi et al. (2018) with a mixed Gamma prior distribution over the precision parameter (related to the bandwidth) and a comprehensive Bayesian hyperparameter estimation scheme (leave-one-out cross validation and likelihood maximization), we construct and collect resulting firing rate signals. 
 4. BSS (Bayesian State-Space): This folder contains code that produces continuous firing rate and irregularity signals by supposing they are latent, time-varying variables in a Bayesian framework. This code is based on the work in "Estimating instantaneous irregularity of neuronal firing" by Shimokawa and Shinomoto (2009), but with extensive updates to the framework (BVP solution-based method for MAP estimates of the latent states, rigorous computational augments that ensure numerical stability, etc.). This folder also contains code that takes the best-performing rates across the different rate estimation methods (OKS, BAKS, BSS) and calculates that proximity to criticality.
 5. TRT (Time-Rescaling Theorem): This folder contains code that determines the goodness-of-fit of each firing rate to the observed data (e.g. interspike intervals, spike times) by assuming the rate function informs on either an inhomogeneous Poisson or Gamma renewal process (if the irregularity is provided or globally estimated). Best performing models are used in proximity to criticality analysis.
+
+## Dependencies 
+
+Program prerequisites include MATLAB version 2025b (or newer)
+
+## Authors
+
+Richard Foster: fosterrr@vcu.edu, fosterrr@alumni.vcu.edu (corresponding author) <br/>
+Cheng Ly: cly@vcu.edu
+
+## Version History
+
+* 0.1
+  * Initial Release
